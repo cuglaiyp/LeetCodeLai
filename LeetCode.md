@@ -26,6 +26,8 @@
 
 [324. 摆动排序 II](https://leetcode-cn.com/problems/wiggle-sort-ii/)（桶排序，先把元素放入桶里面，再分大小插空）
 
+[539. 最小时间差](https://leetcode-cn.com/problems/minimum-time-difference/)（时间处理成分钟，并且算出下一天的偏移量，一起排序）
+
 
 
 **下面三类排序重点掌握，能背下来最好**
@@ -151,8 +153,10 @@ func heapify(nums []int, curIdx, end int) {
 		if j+1 <= end && nums[j] < nums[j+1] {
 			j++ // 右子结点没越界，且左子结点没右子结点大，指向右子结点
 		}
-		if nums[curIdx] < nums[j] { // 比较子结点较大者与父结点
+		if nums[curIdx] < nums[j] { // 比较子结点较大者与父结点谁更大
+            // 子结点更大，那么需要与父结点交换位置
 			nums[j], nums[curIdx] = nums[curIdx], nums[j]
+            // z
 			curIdx = j
 		}else {
 			break // 没有交换的话，就结束循环
@@ -428,9 +432,11 @@ private int[] getNext(String needle) {
 
 
 
-## 堆
+## 堆（优先队列）
 
 [295. 数据流的中位数](https://leetcode-cn.com/problems/find-median-from-data-stream/)
+
+[373. 查找和最小的K对数字](https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/)（双指针肯定是不行的，这个比较trick）
 
 
 
